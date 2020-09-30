@@ -1,4 +1,7 @@
- 
+<div class="top-bar justify-content-left fixed-top text-white" style="display:flex; width: 100% ; height: 70px;  background: #081B33;">
+                <div class="atas"><div class="image" ></div>    <h3 class="ml-2" style="line-height:70px;"> SMEA-PILKETOS</h3> </div>
+            </div>
+
  
  <div class="container ">
     <form class="justify-content-center" method="POST" action="">
@@ -23,7 +26,18 @@
 
     
  </div>
- 
+
+<!-- bottom -->
+
+<footer class=" justify-content-center text-center " style="padding: 20px; width:100%; background: #f0f8ff;">
+    <div class="footer-container" >
+        <div class="social-media">
+        <h6 class="text-body mt-4" ><i class="far fa-copyright"></i> Komunitas <span style="color: #2ab7ca ;"> Teknik Informatika </span> </h6>
+            <a href="http://facebook.com"><i class="fab fa-facebook-square text-dark mr-3"></i></a>
+            <a href="http://instagram.com"><i class="fab fa-instagram text-dark"></i></a>
+        </div>
+    </div>
+</footer>
 
  <style>
      body{
@@ -36,7 +50,7 @@
 
      form{
          
-         margin-top: 300px;
+         margin-top: 200px;
          margin-left: auto;
          margin-right: auto;
          background: #fff;
@@ -53,6 +67,30 @@
          padding-top: 30px;
          height: 45px;
      }
+     /* navbar */
+    .atas{
+        margin-right:auto;
+        margin-left: auto;
+        display: flex;
+        }
+
+    .image{
+        height: 30px;
+        width: 30px;
+        background-image: url('<?= base_url(); ?>assets/resources/home/smk.png');
+        background-position: center center;
+        background-size: cover;
+        margin-top: auto;
+        margin-bottom: auto;
+    
+                
+            }
+
+        /* bottom */
+    footer{
+        position: fixed;
+        bottom: 0;
+            }
 
      @media only screen and ( max-width : 768px){
          form{
@@ -61,6 +99,11 @@
          button{
              position: static;
              transform: translate(0,0);
+         }
+
+         footer{
+             position: static;
+             margin-top: 40px;
          }
      }
      

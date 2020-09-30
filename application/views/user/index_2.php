@@ -1,13 +1,14 @@
 </head>
 
 <body>
+<!-- dhuwur -->
 <div class="top-bar justify-content-left fixed-top text-white" style="display:flex; width: 100% ; height: 70px;  background: #081B33;">
                 <div class="atas"><div class="image" ></div>    <h3 class="ml-2" style="line-height:70px;"> SMEA-PILKETOS</h3> </div>
 </div>
 
 
     <div class="container">
-    <h2 style="margin-top: 100px;">Pilih Kandidat Ketua kelas 11</h2>
+    <h2 style="margin-top: 100px;">Pilih Kandidat Ketua kelas 10</h2>
             <hr>
         <div class="content-container">
            
@@ -22,16 +23,16 @@
                     <p ><?= $daftar['visi']?></p>
                 </div>
 
-            
-                <a href="<?= base_url();?>user/detail_ketua_1/<?= $daftar['id']; ?>" class="btn btn-success">pilih</a>
+                <a href="<?= base_url();?>user/detail_ketua_2/<?= $daftar['id']; ?>" class="btn btn-success">pilih</a>
             </div>
             </div>
             <?php endforeach;?>
 
         </div>
     </div>
+
 <!-- footer -->
-    <footer class=" justify-content-center text-center " style="padding: 20px; width:100%; background: #f0f8ff;">
+<footer class=" justify-content-center text-center " style="padding: 20px; width:100%; background: #f0f8ff;">
     <div class="footer-container" >
         <div class="social-media">
         <h6 class="text-body mt-4" ><i class="far fa-copyright"></i> Komunitas <span style="color: #2ab7ca ;"> Teknik Informatika </span> </h6>
@@ -45,26 +46,6 @@
     body{
         background: #f0f8ff;
     }
-
-    
-     /* top nav */
-     .atas{
-        margin-right:auto;
-        margin-left: auto;
-        display: flex;
-        }
-
-    .image{
-        height: 30px;
-        width: 30px;
-        background-image: url('<?= base_url(); ?>assets/resources/home/smk.png');
-        background-position: center center;
-        background-size: cover;
-        margin-top: auto;
-        margin-bottom: auto;
-    
-                
-            }
 
     .content-container{
         margin-top: 70px;
@@ -88,6 +69,25 @@
         bottom: 20px;
     }
 
+    /* style untuk atas */
+    .atas{
+        margin-right:auto;
+        margin-left: auto;
+        display: flex;
+        }
+
+    .image{
+        height: 30px;
+        width: 30px;
+        background-image: url('<?= base_url(); ?>assets/resources/home/smk.png');
+        background-position: center center;
+        background-size: cover;
+        margin-top: auto;
+        margin-bottom: auto;
+    
+                
+            }
+
     @media only screen and ( max-width : 768px){
         .content-container{
             display: flex;
@@ -99,6 +99,7 @@
         }
         .card{
             margin-top: 20px;
+            margin-bottom: 20px;
         }
     }
 </style>
@@ -112,7 +113,7 @@
                 image.forEach( img => {
                     let bg_img = img.getAttribute('bg-img');
                     img.style.backgroundImage = `url('${bg_img}')`;
-                    img.style.backgroundPosition = 'center center';
+                    img.style.backgroundPosition = 'center 10%';
                     img.style.backgroundSize = 'cover';
                 } )
             }

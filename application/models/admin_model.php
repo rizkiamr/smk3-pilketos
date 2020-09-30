@@ -82,4 +82,43 @@
             $this->db->where('id' , $i);
             $this->db->delete('ketua_2');
         }
+
+
+        // edit data kandidat
+
+        public function edit_ketua_1($id){
+            $foto = $_FILES['foto'];
+
+            if( $foto ){
+                $config['upload_path'] = './assets/resources/kandidat';
+                $config['allowed_types'] = 'jpg|jpeg|png';
+
+                $this->load->library('upload' , $config);
+                if($this->upload->do_upload('foto')){
+                    $this->upload->data('foto');
+                }
+                
+                else{
+                    echo 'gagal';
+                    var_dump($foto);
+                    echo $this->upload->display_errors();
+                }
+                $this->db->where('id' , $id);
+                $this->db->set('foto' , $foto['name']);
+                $this->db->update('ketua_1');
+            
+            }
+            
+            $data = [
+                'nama' => $this->input->post('nama'),
+                'kelas' => $this->input->post('kelas'),
+                'visi' => $this->input->post('visi'),
+                
+            ];
+            $this->db->where('id' , $id);
+            $this->db->set($data);
+            $this->db->update('ketua_1');
+
+            
+        }
     }

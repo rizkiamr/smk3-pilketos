@@ -29,8 +29,8 @@
         // logout
 
         public function logout(){
-            $this->session->login == false;
-            redirect('admin/login');
+            $this->session->sess_destroy();
+            redirect('home');
         }
 
         public function index(){
@@ -113,6 +113,7 @@
 
         public function hapus_ketua_1($id) {
             $this->admin_model->hapus_ketua_1($id);
+            $this->session->set_flashdata('flash' , 'dihapus');
             echo 'berhasil';
             redirect('admin/daftar_kandidat');
 
@@ -152,7 +153,29 @@
 
         }
 
-        
+    // edit data
+
+    public function edit_ketua_1($id){
+        $data['judul'] = 'edit kandidat 2';
+        $data['kandidat'] = $this->db->get_where(  'ketua_1' , ['id' => $id])->result_array();
+
+        $this->form_validation->set_rules('nama' , 'Nama' , 'required');
+        $this->form_validation->set_rules('kelas' , 'Kelas' , 'required');
+        $this->form_validation->set_rules('visi' , 'Visi dan Misi' , 'required');
+
+        if($this->form_validation->run() == false ){
+            // $error = array('error' => $this)
+            $this->load->view('templates/header' , $data);
+            $this->load->view('admin/edit_ketua_1', $data);
+            $this->load->view('templates/footer' );
+        }
+
+        else{
+            $this->admin_model->edit_ketua_1($id);
+            $this->session->set_flashdata('flash' , 'berhasil diubah');
+            redirect( 'admin/daftar_kandidat');
+        }
+    }
 
        
     }

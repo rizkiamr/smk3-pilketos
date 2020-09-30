@@ -14,8 +14,8 @@
 
                 <div class="col-md-6 visi">
                 <p><?= nl2br($daftar['visi']);?></p>
-                <a href="<?= base_url(); ?>user/pilih_ketua_1/<?= $daftar['id']; ?>" class="btn btn-success mt-3 pilih"> Pilih </a>
-                <a href="<?= base_url(); ?>user/index" class="btn btn-primary back" > Kembali </a>
+                <a href="<?= base_url(); ?>user/pilih_ketua_2/<?= $daftar['id']; ?>" class="btn btn-success mt-3 pilih"> Pilih </a>
+                <a href="<?= base_url(); ?>user/index_2" class="btn btn-primary back" > Kembali </a>
                 </div>
             </div>
     <?php endforeach;?>
@@ -54,6 +54,11 @@
             height: 340px;
         }
 
+        
+        .back{
+                margin-top: 120px;
+            }
+
         @media only screen and ( max-width : 768px){
             .img{
                 width: 100%;
@@ -70,7 +75,6 @@
                 
             }
 
-            
             .back{
                 margin-top: 60px;
                 width: 95%;
@@ -96,7 +100,7 @@
                             let bg_img = img.getAttribute('bg-image');
                             img.style.backgroundImage = `url('${bg_img}')`;
                             img.style.backgroundSize = 'cover';
-                            img.style.backgroundPosition = 'center center'
+                            img.style.backgroundPosition = 'center 10%'
                         })
                     }
 

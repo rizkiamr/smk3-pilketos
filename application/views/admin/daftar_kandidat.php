@@ -58,7 +58,7 @@
                         <hr style="width: 80%; margin-left:0;">
 
                         <?php if( $this->session->flashdata('flash') ) :?>
-                            <div class="alert alert-success" role="alert" style="width: 70%;">
+                            <div class="alert alert-success" role="alert" style="width: 80%;">
                                data  <?= $this->session->flashdata('flash');?>
                             </div>
                         <?php endif;?>
@@ -82,8 +82,8 @@
                                         <td><?= $daftar['nama'];?></td>
                                         <td><?= $daftar['kelas'];?></td>
                                         <td><?= $daftar['visi'];?></td>
-                                        <td> <img src="<?= base_url()?>/assets/resources/kandidat/<?= $daftar['foto']; ?>" alt="" srcset="" width="80px" height="100px">  </td>
-                                        <th> <a href="#" class="btn btn-primary"><i class="fas fa-edit text-white "></i></a><a href="<?= base_url(); ?>admin/hapus_ketua_1/<?= $daftar['id'];?>" class="mt-3 btn btn-danger"onclick="confirm('apkah yakin ingin dihapus?')"><i class="fas fa-trash-alt text-white "></i></a></th>
+                                        <td> <img src="<?= base_url()?>assets/resources/kandidat/<?= $daftar['foto']; ?>" alt="" srcset="" width="80px" height="100px">  </td>
+                                        <th> <a href=" <?= base_url(); ?>admin/edit_ketua_1/<?= $daftar['id']; ?>" class="btn btn-primary"><i class="fas fa-edit text-white "></i></a><a href="<?= base_url(); ?>admin/hapus_ketua_1/<?= $daftar['id'];?>" class="mt-3 btn btn-danger"onclick="confirm('apkah yakin ingin dihapus?')"><i class="fas fa-trash-alt text-white "></i></a></th>
                                     </tr>
                                 <?php endforeach; ?>
                                     
